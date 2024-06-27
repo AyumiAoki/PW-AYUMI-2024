@@ -1,7 +1,7 @@
-const http = require("http");
-const fs = require("fs").promises;
-const dotenv = require("dotenv");
-const util = require("./util");
+import http from "http";
+import fs from "fs/promises";
+import dotenv from "dotenv";
+import { criarLink } from "./util.js";
 
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
@@ -15,7 +15,7 @@ const server = http.createServer(async (req, res) => {
     try {
       const files = await fs.readdir(folder);
       files.forEach((file) => {
-        res.write(util.createLink(file));
+        res.write(criarLink(file));
       });
     } catch (err) {
       res.write("Diretorio não existe");
