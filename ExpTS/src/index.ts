@@ -16,6 +16,7 @@ app.engine(
     defaultLayout: 'main',
   })
 );
+
 app.set("view engine", "handlebars");
 app.set("views", `${__dirname}/views`);
 
