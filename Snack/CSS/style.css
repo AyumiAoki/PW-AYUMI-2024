@@ -1,0 +1,26 @@
+#board {
+    background-color: #ccc;
+    border: 2px solid black;
+    margin: 36px 4px;
+}
+
+#board td {
+    width: 16px;
+    height: 16px;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.game-over {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    font-size: 16px;
+    font-weight: bold;
+}
