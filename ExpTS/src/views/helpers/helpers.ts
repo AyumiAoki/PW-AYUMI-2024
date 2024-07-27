@@ -1,4 +1,4 @@
-import { Prof, Technology } from "./helpersType";
+import { Prof, Technology, PathHref } from "./helpersType";
 
 export function listProfs(profs: Prof[]) {
   const list = profs.map((p) => `<li>${p.name}-${p.room}</li>`);
