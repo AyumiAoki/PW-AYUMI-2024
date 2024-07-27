@@ -8,3 +8,8 @@ export interface Technology {
   type: String;
   poweredByNodejs: boolean;
 }
+
+export interface PathHref {
+  currentPath: String;
+  linkPath: String;
+}

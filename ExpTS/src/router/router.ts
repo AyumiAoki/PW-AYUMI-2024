@@ -1,8 +1,19 @@
 import { Router } from "express";
-import mainController from "../controllers/main"
+import mainController from "../controllers/main";
+import majorController from "../controllers/major";
 
 const router = Router();
 
+//Major controller
+router.get("/major", majorController.index);
+router.get("/major/create", majorController.create);
+router.post("/major/create", majorController.create);
+router.get("/major/read/:id", majorController.read);
+router.get("/major/update/:id", majorController.update);
+router.post("/major/update/:id", majorController.update);
+router.get("/major/remove/:id", majorController.remove);
+
+//Main controller
 router.get("/", mainController.index);
 router.get("/about", mainController.about);
 router.get("/lorem/:paragraphs", mainController.lorem);

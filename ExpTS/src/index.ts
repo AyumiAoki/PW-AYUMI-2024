@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import dotenv from "dotenv";
 import { engine } from "express-handlebars";
 import logger from "./middlewares/logger";
@@ -13,7 +13,7 @@ app.engine(
   engine({
     helpers: require(`${__dirname}/views/helpers/helpers.ts`),
     layoutsDir: `${__dirname}/views/layouts`,
-    defaultLayout: 'main',
+    defaultLayout: "main",
   })
 );
 
@@ -21,6 +21,8 @@ app.set("view engine", "handlebars");
 app.set("views", `${__dirname}/views`);
 
 app.use(logger("combined"));
+
+app.use(express.urlencoded({ extended: false }));
 
 app.use(router);
 
