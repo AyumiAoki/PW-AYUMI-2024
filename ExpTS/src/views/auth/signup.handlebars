@@ -10,21 +10,12 @@
 <div class="col-6">
   <form action="/auth/signup" id="signup" method="post">
     <div class="mb-3">
-<<<<<<< HEAD
       <label for="name" class="form-label">Nome Completo</label>
       <input
         type="text"
         class="form-control"
         id="name"
         name="name"
-=======
-      <label for="fullname" class="form-label">Nome Completo</label>
-      <input
-        type="text"
-        class="form-control"
-        id="fullname"
-        name="fullname"
->>>>>>> fe91dfb2404afb022bf039cb86e0aaf9f70e9369
         placeholder="Nome completo"
       />
     </div>
@@ -66,14 +57,10 @@
   </form>
 </div>
 <script>
-<<<<<<< HEAD
  const signup = document.getElementById("signup");
     signup.addEventListener("submit", (e) => {
         const password = document.getElementById("password").value;
         const repeatPassword = document.getElementById("repeat-password").value;
         if(!password || password !== repeatPassword) e.preventDefault();
     })
-=======
-
->>>>>>> fe91dfb2404afb022bf039cb86e0aaf9f70e9369
 </script>
