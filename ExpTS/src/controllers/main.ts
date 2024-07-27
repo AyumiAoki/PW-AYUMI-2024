@@ -69,4 +69,18 @@ const hb4 = (req: Request, res: Response) => {
   res.render("main/hb4", { technologies });
 };
 
-export default { lorem, about, index, hb1, hb2, hb3, hb4 };
+function createCookie(req: Request, res: Response) {
+  if(req.cookies.test) {
+    res.send(`Vocâ já tinha o cookie ${req.cookies.test}`);
+  }else {
+    res.cookie("test", "1");
+    res.send("Vocâ não tinha o cookie, agora tem");
+  }
+}
+
+const clearCookie = function (req: Request, res: Response) {
+  res.clearCookie("Cookie de teste");
+  res.send("cookie apagado");
+};
+
+export default { lorem, about, index, hb1, hb2, hb3, hb4, createCookie, clearCookie };
