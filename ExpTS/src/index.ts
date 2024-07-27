@@ -3,6 +3,9 @@ import dotenv from "dotenv";
 import { engine } from "express-handlebars";
 import logger from "./middlewares/logger";
 import router from "./router/router";
+import cookieParser from "cookie-parser";
+import session from "express-session";
+import { v4 } from "uuid";
 
 dotenv.config();
 const app = express();
@@ -23,6 +26,17 @@ app.set("views", `${__dirname}/views`);
 app.use(logger("combined"));
 
 app.use(express.urlencoded({ extended: false }));
+
+app.use(cookieParser());
+
+app.use(
+  session({
+    genid: () => v4(), // usamos UUID para gerar os SESSID
+    secret: "Hi9Cf#mK98",
+    saveUninitialized: true,
+    resave: true,
+  })
+);
 
 app.use(router);
 

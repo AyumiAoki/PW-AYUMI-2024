@@ -1,8 +1,20 @@
 import { Router } from "express";
 import mainController from "../controllers/main";
 import majorController from "../controllers/major";
+import authController from "../controllers/auth";
 
 const router = Router();
+
+//Auth controller
+router.get('/auth/signup', authController.signup);
+router.post('/auth/signup', authController.signup);
+router.get('/auth/login', authController.login);
+router.post('/auth/login', authController.login);
+router.post('/auth/logout', authController.logout);
+
+//Cookie controller
+router.get('/create-cookie', mainController.createCookie);
+router.get('/clear-cookie', mainController.clearCookie);
 
 //Major controller
 router.get("/major", majorController.index);
